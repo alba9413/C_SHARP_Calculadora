@@ -27,7 +27,7 @@ namespace Calculadora
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void botonNumero(object sender, EventArgs e)
         {
             Button boton = (Button) sender; //casteo para pder usar el boton como sender
 
@@ -42,7 +42,7 @@ namespace Calculadora
            
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void botonOperacion(object sender, EventArgs e)
         {
             Button boton = (Button)sender;
             operacion = boton.Text;
@@ -51,7 +51,7 @@ namespace Calculadora
 
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void botonIgual(object sender, EventArgs e)
         {
             double operando2 = Convert.ToDouble(label1.Text);
             double resultado = 0;
@@ -62,6 +62,14 @@ namespace Calculadora
             else if (operacion == "-")
             {
                 resultado = operando1 - operando2;
+            }
+            else if (operacion == "/")
+            {
+                resultado = operando1 / operando2;
+            }
+            else if (operacion == "*")
+            {
+                resultado = operando1 * operando2;
             }
             label1.Text = Convert.ToString(resultado);
         }
